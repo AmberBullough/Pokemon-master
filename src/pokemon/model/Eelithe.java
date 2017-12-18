@@ -21,11 +21,11 @@ public class Eelithe extends Pokemon implements Normal, Fire
 	
 	public void normalType()
 	{
-		
+		System.out.println("Eelithe");
 	}
 	
 	public void fireType()
 	{
-		
+		System.out.print("Eelithe");
 	}
 }

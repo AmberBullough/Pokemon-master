@@ -21,12 +21,12 @@ public class Pikadoor extends Pokemon implements Grass, Electric
 	public void grassType() 
 	{
 		
-		
+		System.out.print("Pikadoor");
 	}
 	
 	public void electricType()
 	{
-		
+		System.out.print("Pikadoor");
 	}
 	
 }

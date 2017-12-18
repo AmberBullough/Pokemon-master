@@ -21,12 +21,12 @@ public class Shieon extends Pokemon implements Electric, Fairy
 	
 	public void electricType()
 	{
-		
+		System.out.print("Shieon");
 	}
 	
 	public void fairyType()
 	{
-		
+		System.out.print("Shieon");
 	}
 	
 }
