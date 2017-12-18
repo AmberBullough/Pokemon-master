@@ -1,17 +1,17 @@
 package pokemon.model;
 
-public class Shieon extends Pokemon implements Electric, Fairy
+public class Luxion extends Shieon implements Electric, Fairy
 {
-	public Shieon (int number, String name)
+	public Luxion (int number, String name)
 	{
-		super(name, number);
+		super(number, name);
 		
 	}
 	public int attackMove(int level)
 	{
-		int babyDollEyes = -56;
+		int flowerShield = -120;
 		
-		return babyDollEyes;
+		return flowerShield;
 	}
 	public String sayName()
 	{
@@ -26,12 +26,12 @@ public class Shieon extends Pokemon implements Electric, Fairy
 	
 	public void electricType()
 	{
-		System.out.print("Shieon");
+		System.out.print("Luxion");
 	}
 	
 	public void fairyType()
 	{
-		System.out.print("Shieon");
+		System.out.print("Luxion");
 	}
 	
 }
