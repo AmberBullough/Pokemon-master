@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Shieon extends Pokemon implements Electric
+public class Shieon extends Pokemon implements Electric, Fairy
 {
 	public Shieon (int number, String name)
 	{
@@ -9,7 +9,7 @@ public class Shieon extends Pokemon implements Electric
 	}
 	public int attackMove(int level)
 	{
-		int spark = -913124;
+		int spark = -56;
 		
 		return spark;
 	}
@@ -20,6 +20,11 @@ public class Shieon extends Pokemon implements Electric
 	}
 	
 	public void electricType()
+	{
+		
+	}
+	
+	public void fairyType()
 	{
 		
 	}

@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Pikadoor extends Pokemon implements Grass 
+public class Pikadoor extends Pokemon implements Grass, Electric 
 {
 	public Pikadoor(int number, String name)
 	{
@@ -8,7 +8,7 @@ public class Pikadoor extends Pokemon implements Grass
 	}
 	public int attackMove(int level)
 	{
-		int vineWhip = -913124;
+		int vineWhip = -45;
 		
 		return vineWhip;
 	}
@@ -21,6 +21,11 @@ public class Pikadoor extends Pokemon implements Grass
 	public void grassType() 
 	{
 		
+		
+	}
+	
+	public void electricType()
+	{
 		
 	}
 	

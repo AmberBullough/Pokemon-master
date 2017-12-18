@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Eelithe extends Pokemon implements Normal
+public class Eelithe extends Pokemon implements Normal, Fire
 {
 	public Eelithe (int number, String name)
 	{
@@ -9,7 +9,7 @@ public class Eelithe extends Pokemon implements Normal
 	
 	public int attackMove(int level)
 	{
-		int copyCat = -913124;
+		int copyCat = -20;
 		
 		return copyCat;
 	}
@@ -20,6 +20,11 @@ public class Eelithe extends Pokemon implements Normal
 	}
 	
 	public void normalType()
+	{
+		
+	}
+	
+	public void fireType()
 	{
 		
 	}
