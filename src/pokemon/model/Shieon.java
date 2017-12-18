@@ -9,14 +9,19 @@ public class Shieon extends Pokemon implements Electric
 	}
 	public int attackMove(int level)
 	{
-		int annoyance = -913124;
+		int spark = -913124;
 		
-		return annoyance;
+		return spark;
 	}
 	public String sayName()
 	{
 		return getName();
 				
+	}
+	
+	public void electricType()
+	{
+		
 	}
 	
 }
