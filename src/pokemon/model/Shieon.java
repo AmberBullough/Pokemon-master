@@ -2,11 +2,24 @@ package pokemon.model;
 
 public class Shieon extends Pokemon implements Electric, Fairy
 {
+	public Shieon()
+	{
+		super("Shieon", 915);
+	}
+	
 	public Shieon (int number, String name)
 	{
 		super(name, number);
 		
 	}
+	
+	public Shieon (String name)
+	{
+		super(name, 915);
+	}
+	
+	
+	
 	public int attackMove(int level)
 	{
 		int babyDollEyes = -56;

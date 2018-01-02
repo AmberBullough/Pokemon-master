@@ -2,11 +2,24 @@ package pokemon.model;
 
 public class Luxraion extends Luxion implements Electric,Fairy
 {
+	public Luxraion()
+	{
+		super(917, "Luxraion");
+	}
+	
+	public Luxraion (String name)
+	{
+		super(917, name);
+	}
+	
 	public Luxraion (int number, String name)
 	{
 		super(number, name);
 		
 	}
+	
+	
+	
 	public int attackMove(int level)
 	{
 		int thunderFang = -240;

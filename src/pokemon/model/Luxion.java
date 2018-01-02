@@ -2,11 +2,23 @@ package pokemon.model;
 
 public class Luxion extends Shieon implements Electric, Fairy
 {
+	public Luxion()
+	{
+		super(916, "Luxion");
+	}
+	public Luxion(String name)
+	{
+		super(916, name);
+	}
 	public Luxion (int number, String name)
 	{
 		super(number, name);
 		
 	}
+	
+	
+	
+	
 	public int attackMove(int level)
 	{
 		int flowerShield = -120;

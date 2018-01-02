@@ -2,6 +2,15 @@ package pokemon.model;
 
 public class Pikadoor extends Pokemon implements Grass, Electric 
 {
+	public Pikadoor()
+	{
+		super("Pikadoor", 914);
+	}
+	
+	public Pikadoor(String name)
+	{
+		super(name, 914);
+	}
 	public Pikadoor(int number, String name)
 	{
 		super(name, number);
@@ -27,6 +36,12 @@ public class Pikadoor extends Pokemon implements Grass, Electric
 	public void electricType()
 	{
 		System.out.print("Pikadoor");
+	}
+
+	@Override
+	public boolean canEvolve() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }
