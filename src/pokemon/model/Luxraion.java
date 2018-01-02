@@ -15,6 +15,7 @@ public class Luxraion extends Luxion implements Electric,Fairy
 	public Luxraion (int number, String name)
 	{
 		super(number, name);
+		setup();
 		
 	}
 	
@@ -47,4 +48,10 @@ public class Luxraion extends Luxion implements Electric,Fairy
 		System.out.print("Luxraion");
 	}
 	
+	@Override
+	protected void setup()
+	{
+		super.setup();
+		this.setAttackPoints(456);
+	}
 }

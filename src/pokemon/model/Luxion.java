@@ -13,6 +13,7 @@ public class Luxion extends Shieon implements Electric, Fairy
 	public Luxion (int number, String name)
 	{
 		super(number, name);
+		setup();
 		
 	}
 	
@@ -45,5 +46,10 @@ public class Luxion extends Shieon implements Electric, Fairy
 	{
 		System.out.print("Luxion");
 	}
-	
+	@Override
+	protected void setup()
+	{
+		super.setup();
+		this.setAttackPoints(359);
+	}
 }

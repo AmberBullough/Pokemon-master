@@ -37,11 +37,36 @@ public class Pikadoor extends Pokemon implements Grass, Electric
 	{
 		System.out.print("Pikadoor");
 	}
+	protected void setup()
+	{
+		this.setAttackPoints(234);
+		this.setCanEvolve(false);
+		this.setEnchanceModifier(.89);
+		this.setHealthPoints(123);
+}
+	private void setHealthPoints(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+	private void setEnchanceModifier(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+	private void setAttackPoints(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+	private void setCanEvolve(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public boolean canEvolve() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
 }
+
+	
+

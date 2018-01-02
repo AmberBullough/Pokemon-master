@@ -14,33 +14,30 @@ public class Eelithe extends Pokemon implements Normal, Fire
 	{
 		super(name, number);
 		
+		setup();
 	}
 	
-	public int attackMove(int level)
+	protected void setup()
 	{
-		int copyCat = -20;
-		
-		return copyCat;
+		this.setAttackPoints(234);
+		this.setCanEvolve(false);
+		this.setEnchanceModifier(.89);
+		this.setHealthPoints(123);
 	}
-	public String sayName()
-	{
-		return getName();
-				
-	}
-	
-	public void normalType()
-	{
-		System.out.println("Eelithe");
-	}
-	
-	public void fireType()
-	{
-		System.out.print("Eelithe");
-	}
-
-	@Override
-	public boolean canEvolve() {
+	private void setHealthPoints(int i) {
 		// TODO Auto-generated method stub
-		return false;
+		
+	}
+	private void setEnchanceModifier(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+	private void setCanEvolve(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	private void setAttackPoints(int i) {
+		// TODO Auto-generated method stub
+		
 	}
 }
