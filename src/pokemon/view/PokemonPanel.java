@@ -4,10 +4,22 @@ import pokemon.controller.PokemonController;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.SpringLayout;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JComponent;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class PokemonPanel extends JPanel
 {
 	private PokemonController appController;
+	
+	private SpringLayout baseLayout;
 	
 	private JLabel healthLabel;
 	private JLabel attackLabel;
@@ -47,17 +59,41 @@ public class PokemonPanel extends JPanel
 	}
 	
 	
-	public PokemonPanel()
+	public PokemonPanel(PokemonController appController)
 	{
+		super();
+		this.appController = appController;
 		
-		JButton btnReset = new JButton("Reset");
-		add(btnReset);
 		
-		JButton btnNewButton = new JButton("New button");
-		add(btnNewButton);
+		saveButton = new JButton ("Save");
+		clearButton = new JButton ("Clear");
+		pokedexDropdown = new JComboBox();
 		
-		JSpinner spinner = new JSpinner();
-		add(spinner);
+		healthLabel = new JLabel();
+		attackLabel = new JLabel();
+		nameLabel = new JLabel();
+		evolvableLabel = new JLabel();
+		modifierLabel = new JLabel();
+		iconLabel = new JLabel();
+		
+		baseLayout = new SpringLayout();
+		
+		evolvableBox = new JCheckBox();
+		nameField = new JTextField();
+		numberField = new JTextField();
+		attackField = new JTextField();
+		healthField = new JTextField();
+		modifierField = new JTextField();
+		
+		descriptionArea = new JTextArea();
+		typeArea = new JTextArea();
+		
+		//JButton btnReset = new JButton("Reset");
+		//add(btnReset);
+		//JSpinner spinner = new JSpinner();
+		//add(spinner);
+		//JButton btnNewButton = new JButton("New button");
+		//add(btnNewButton);
 		
 	}
 }
