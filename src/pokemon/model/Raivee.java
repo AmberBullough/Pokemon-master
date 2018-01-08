@@ -1,19 +1,19 @@
 package pokemon.model;
 
-public class Raivee implements Electric, Normal
+public class Raivee extends Pokemon implements Electric, Normal
 {
 	public Raivee()
 	{
-		super("Raivee", 919);
+		super("Raivee" , 919);
 	}
 	public Raivee (String name)
 	{
-		super(name, 915);
+		super(name, 919);
 	}
 	
-	public Raviee (int number, String name)
+	public void Raviee (int number, String name)
 	{
-		super(name, number);
+		super(number, name);
 		setup();
 	}
 	
@@ -28,11 +28,6 @@ public class Raivee implements Electric, Normal
 	{
 		return getName();
 				
-	}
-	
-	private String getName() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	public boolean canEvolve()
 	{
@@ -69,6 +64,11 @@ public class Raivee implements Electric, Normal
 		
 	}
 	private void setCanEvolve(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void normalType() {
 		// TODO Auto-generated method stub
 		
 	}
