@@ -49,4 +49,9 @@ public abstract class Pokemon
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public boolean canEvolve()
+	{
+		return canEvolve;
+	}
 }
