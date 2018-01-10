@@ -47,6 +47,9 @@ public class PokemonPanel extends JPanel
 	private JPanel secondType;
 	private JPanel thirdType;
 	private JPanel fourthType;
+	private JTextField txtDescription;
+	private JTextField txtHealth;
+	private JTextField txtAttack;
 	
 	setupComboBox();
 	setupTypePanels();
@@ -246,6 +249,62 @@ public class PokemonPanel extends JPanel
 	{
 		super();
 		this.appController = appController;
+		SpringLayout springLayout = new SpringLayout();
+		setLayout(springLayout);
+		
+		JButton btnSave = new JButton("Save");
+		add(btnSave);
+		
+		JButton btnClear = new JButton("Clear");
+		springLayout.putConstraint(SpringLayout.NORTH, btnSave, 0, SpringLayout.NORTH, btnClear);
+		springLayout.putConstraint(SpringLayout.WEST, btnSave, 6, SpringLayout.EAST, btnClear);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnClear, -132, SpringLayout.SOUTH, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnClear, -196, SpringLayout.EAST, this);
+		add(btnClear);
+		
+		JCheckBox chckbxEvolvable = new JCheckBox("Evolvable");
+		springLayout.putConstraint(SpringLayout.NORTH, chckbxEvolvable, 6, SpringLayout.SOUTH, btnSave);
+		springLayout.putConstraint(SpringLayout.WEST, chckbxEvolvable, 10, SpringLayout.WEST, btnClear);
+		add(chckbxEvolvable);
+		
+		JComboBox comboBox = new JComboBox();
+		springLayout.putConstraint(SpringLayout.WEST, comboBox, 188, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, comboBox, -33, SpringLayout.SOUTH, this);
+		add(comboBox);
+		springLayout.putConstraint(SpringLayout.NORTH, txtDescription, 100, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, txtDescription, -287, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, txtDescription, -130, SpringLayout.NORTH, btnSave);
+		springLayout.putConstraint(SpringLayout.EAST, txtDescription, -103, SpringLayout.EAST, this);
+		
+		JTextArea txtrDescription = new JTextArea();
+		springLayout.putConstraint(SpringLayout.NORTH, txtrDescription, 47, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, txtrDescription, -9, SpringLayout.WEST, btnClear);
+		springLayout.putConstraint(SpringLayout.SOUTH, txtrDescription, 236, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.EAST, txtrDescription, -10, SpringLayout.EAST, this);
+		txtrDescription.setText("Description");
+		add(txtrDescription);
+		
+		JLabel lblIcon = new JLabel("Icon");
+		springLayout.putConstraint(SpringLayout.WEST, lblIcon, 10, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.EAST, lblIcon, -130, SpringLayout.WEST, txtrDescription);
+		springLayout.putConstraint(SpringLayout.EAST, comboBox, 0, SpringLayout.EAST, lblIcon);
+		springLayout.putConstraint(SpringLayout.NORTH, lblIcon, 10, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblIcon, 316, SpringLayout.NORTH, this);
+		add(lblIcon);
+		
+		txtHealth = new JTextField();
+		txtHealth.setText("Health");
+		springLayout.putConstraint(SpringLayout.NORTH, txtHealth, 0, SpringLayout.NORTH, chckbxEvolvable);
+		springLayout.putConstraint(SpringLayout.WEST, txtHealth, 0, SpringLayout.WEST, lblIcon);
+		add(txtHealth);
+		txtHealth.setColumns(10);
+		
+		txtAttack = new JTextField();
+		txtAttack.setText("Attack");
+		springLayout.putConstraint(SpringLayout.SOUTH, txtAttack, 0, SpringLayout.SOUTH, chckbxEvolvable);
+		springLayout.putConstraint(SpringLayout.EAST, txtAttack, 0, SpringLayout.EAST, comboBox);
+		add(txtAttack);
+		txtAttack.setColumns(10);
 		
 		baseLayout = new SpringLayout();
 		
@@ -277,6 +336,4 @@ public class PokemonPanel extends JPanel
 		fourthType = new JPanel();
 	
 	}
-	
-	
 }
