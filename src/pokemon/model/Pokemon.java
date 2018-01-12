@@ -1,5 +1,7 @@
 package pokemon.model;
 
+import java.util.ArrayList;
+
 public abstract class Pokemon 
 {
 
@@ -53,5 +55,38 @@ public abstract class Pokemon
 	public boolean canEvolve()
 	{
 		return canEvolve;
+	}
+	
+	public String[] getPokemonTypes()
+	{
+		String [] types = nil;
+		ArrayList<String> parentType  new ArrayList<String>();
+		Class<?> currentClass = this.getClass();
+		
+		while(currentClass.getSuperclass() != null)
+		{
+			Class<?> [] pokemonypes = getClass().getInterfaces();
+			types = new String[pokemonTypes.length];
+			
+			for(int index = 0; index < types.length; index ++)
+			{
+				String currentInterface = pokemonTypes[index].getCanonicalName();
+				currentInterface = currentInterface.replace(this.getClass().getPackage().getName() + "." , "");
+				if(!parentType.contains(currentInterface))
+					{
+					parentType.add(currentInterface));
+					}
+			}
+			
+			currentClass = currentClass.getSuperclass();
+			
+		}
+		types = new String [parentType.size()];
+		for(int index = 0; index < parentType.size(); index++)
+		{
+			types[index] = parentType.get(index);
+		}
+		return types;
+		
 	}
 }
