@@ -76,7 +76,10 @@ public abstract class Pokemon
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public double getEnchancementModifier()
+	{
+		return enchancementModifier;
+	}
 	public boolean canEvolve()
 	{
 		return canEvolve;
@@ -85,6 +88,22 @@ public abstract class Pokemon
 	{
 		// TODO Auto-generated method stub
 		return getNumber();
+	}
+	public void setCanEvolve(boolean evolve) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void getEnchancementModifier(double modify) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void getHealthPoints(int health) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void getAttackPoints(int attack) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	}

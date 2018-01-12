@@ -13,7 +13,7 @@ public class Raivee extends Pokemon implements Electric, Normal
 	
 	public void Raviee (int number, String name)
 	{
-		super(name, number);
+		super(number, name);
 		setup();
 	}
 	
@@ -63,7 +63,7 @@ public class Raivee extends Pokemon implements Electric, Normal
 		// TODO Auto-generated method stub
 		
 	}
-	private void setCanEvolve(boolean b) {
+	public void setCanEvolve(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}

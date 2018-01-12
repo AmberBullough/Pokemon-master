@@ -17,7 +17,7 @@ public class PokemonController
 		pokedex = new ArrayList<Pokemon>();
 		buildPokedex();
 		
-		appFrame = new PokemonFrame(this);
+		appFrame = new PokemonFrame();
 	}
 	
 	private void buildPokedex()
@@ -90,10 +90,10 @@ public class PokemonController
 	{
 		Pokemon selected = pokedex.get(selection);
 		
-		selected.setAttackPoints(attack);
+		selected.getAttackPoints(attack);
 		selected.setCanEvolve(evolve);
-		selected.setEnchancementModifier(modify);
+		selected.getEnchancementModifier(modify);
 		selected.setName(name);
-		selected.setHealthPoints(health);
+		selected.getHealthPoints(health);
 	}
 }
