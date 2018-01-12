@@ -13,7 +13,7 @@ public class Raivee extends Pokemon implements Electric, Normal
 	
 	public void Raviee (int number, String name)
 	{
-		super(number, name);
+		super(name, number);
 		setup();
 	}
 	

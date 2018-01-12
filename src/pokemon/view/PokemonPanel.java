@@ -52,20 +52,29 @@ public class PokemonPanel extends JPanel
 	private JTextField txtAttack;
 	
 	setupComboBox();
-	setupTypePanels();
-	setupPanel();
-	setupLayout();
-	setupListeners();
+	//setupTypePanels();
+	//setupPanel();
+	//setupLayout();
+	//setupListeners();
 	
 	private void updatePokedexInfo(int index)
 	{
 		nameField.setText(appController.getPokedex().get(index).getName());
-		evolvableBox.setSelected(appController.getPokedex().get(index).isCanEvolve());
+		evolvableBox.setSelected(appController.getPokedex().get(index).canEvolve());
 		numberField.setText(appController.getPokedex().get(index).getNumber()+ "");
 		attackField.setText(appController.getPokedex().get(index).getAttackPoints() + "");
 		healthField.setText(appController.getPokedex().get(index).getHealthPoints() +"");
 		modifierField.setText(appController.getPokedex().get(index).getEnchancementModifier() + "");
+		
+		descriptionArea.setText(appController.getPokedex().get(index).getPokemonTypes());
+		typeArea.setText("");
+		
+		for (String current : appController.getPokedex().get(index).getPokemonTypes())
+		{
+			typeArea.append(current + "\n");
+		}
 	}
+	
 	
 	private void setupComboBox()
 	{
@@ -100,16 +109,23 @@ public class PokemonPanel extends JPanel
 		
 	}
 	
-	private void setupTypePanels()
-	{
-		
-	}
-	
-	
 	
 	private void updateImage()
 	{
+		String path = "pokemon/view/images/";
+		String defaultName = "Logo";
+		String name = pokedexDropdown.getSelectedItem().toString();
+		String extension = ".png";
+		ImageIcon pokemonIcon;
 		
+		try
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+		}
+		catch (NullPointerException missingImageFile)
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+		}
 	}
 	
 	private void updateTypePanels()
@@ -305,6 +321,34 @@ public class PokemonPanel extends JPanel
 		springLayout.putConstraint(SpringLayout.EAST, txtAttack, 0, SpringLayout.EAST, comboBox);
 		add(txtAttack);
 		txtAttack.setColumns(10);
+		
+		JPanel panel = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel, 6, SpringLayout.SOUTH, txtrDescription);
+		springLayout.putConstraint(SpringLayout.WEST, panel, 51, SpringLayout.EAST, lblIcon);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, -198, SpringLayout.SOUTH, comboBox);
+		springLayout.putConstraint(SpringLayout.EAST, panel, -254, SpringLayout.EAST, this);
+		add(panel);
+		
+		JPanel panel_1 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 6, SpringLayout.SOUTH, txtrDescription);
+		springLayout.putConstraint(SpringLayout.WEST, panel_1, 207, SpringLayout.EAST, lblIcon);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, -70, SpringLayout.NORTH, btnSave);
+		springLayout.putConstraint(SpringLayout.EAST, panel_1, -98, SpringLayout.EAST, this);
+		add(panel_1);
+		
+		JPanel panel_2 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel_2, -49, SpringLayout.NORTH, btnClear);
+		springLayout.putConstraint(SpringLayout.WEST, panel_2, 0, SpringLayout.WEST, panel);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_2, -6, SpringLayout.NORTH, btnClear);
+		springLayout.putConstraint(SpringLayout.EAST, panel_2, 0, SpringLayout.EAST, panel);
+		add(panel_2);
+		
+		JPanel panel_3 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel_3, 0, SpringLayout.NORTH, panel_2);
+		springLayout.putConstraint(SpringLayout.WEST, panel_3, 50, SpringLayout.EAST, panel_2);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_3, -6, SpringLayout.NORTH, btnSave);
+		springLayout.putConstraint(SpringLayout.EAST, panel_3, 0, SpringLayout.EAST, panel_1);
+		add(panel_3);
 		
 		baseLayout = new SpringLayout();
 		

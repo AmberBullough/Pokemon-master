@@ -40,4 +40,24 @@ public class Eelithe extends Pokemon implements Normal, Fire
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public void fireType() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void normalType() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int attackMove(int amount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public String sayName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

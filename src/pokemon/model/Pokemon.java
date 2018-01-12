@@ -21,51 +21,13 @@ public abstract class Pokemon
 	public final String[] getPokemonTypes()
 	{
 		
-		Class<?> [] types = getClass().getInterfaces();
-		String [] pokeTypes = new String[types.length];
-		
-		
-		for(int index = 0; index < types.length; index++)
-		{
-			String currentInterface = types[index].getCanonicalName();
-			pokeTypes[index] = currentInterface;
-		}
-		return pokeTypes;
-		
-		
-		
-	}
-	public String toString()
-	{
-			String description = "Hi, I am a " + getName() + ", and my HP is " + healthPoints;
-			return description;
-	}
-	public String getPokemonInformation()
-	{
-		String info = "This pokemon is of type: " + this.getClass().getSimpleName();
-		return info;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public boolean canEvolve()
-	{
-		return canEvolve;
-	}
-	
-	public String[] getPokemonTypes()
-	{
-		String [] types = nil;
+		String [] types = null;
 		ArrayList<String> parentType  new ArrayList<String>();
 		Class<?> currentClass = this.getClass();
 		
 		while(currentClass.getSuperclass() != null)
 		{
-			Class<?> [] pokemonypes = getClass().getInterfaces();
+			Class<?> [] pokemonTypes = currentClass().getInterfaces();
 			types = new String[pokemonTypes.length];
 			
 			for(int index = 0; index < types.length; index ++)
@@ -74,7 +36,7 @@ public abstract class Pokemon
 				currentInterface = currentInterface.replace(this.getClass().getPackage().getName() + "." , "");
 				if(!parentType.contains(currentInterface))
 					{
-					parentType.add(currentInterface));
+					parentType.add(currentInterface);
 					}
 			}
 			
@@ -89,4 +51,40 @@ public abstract class Pokemon
 		return types;
 		
 	}
-}
+
+	public String toString()
+	{
+			String description = "Hi, I am a " + getName() + ", and my HP is " + healthPoints;
+			return description;
+	}
+	public String getPokemonInformation()
+	{
+		String info = "This pokemon is of type: " + this.getClass().getSimpleName();
+		return info;
+	}
+	public int getHealthPoints()
+	{
+		return healthPoints;
+	}
+	public int getAttackPoints()
+	{
+		return attackPoints;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public boolean canEvolve()
+	{
+		return canEvolve;
+	}
+	public String getNumber() 
+	{
+		// TODO Auto-generated method stub
+		return getNumber();
+	}
+	
+	}

@@ -22,12 +22,12 @@ public class PokemonController
 	
 	private void buildPokedex()
 	{
-		pokedex.add(new Eelithe());
-		pokedex.add(new Luxion());
-		pokedex.add(new Luxraion());
-		pokedex.add(new Pikadoor());
-		pokedex.add(new Raivee());
-		pokedex.add(new Shieon());
+		pokedex.add(new Eelithe("Eelithe"));
+		pokedex.add(new Luxion("Luxion"));
+		pokedex.add(new Luxraion("Luxraion"));
+		pokedex.add(new Pikadoor("Pikadoor"));
+		pokedex.add(new Raivee("Raivee"));
+		pokedex.add(new Shieon("Shieon"));
 	}
 	
 	public void start()
@@ -72,5 +72,28 @@ public class PokemonController
 	public boolean isValidDouble(String input)
 	{
 		return false;
+	}
+	
+	
+	public String [] convertPokedex()
+	{
+		String [] names = new String [pokedex.size()];
+		
+		for(int index = 0; index < pokedex.size(); index ++)
+		{
+			names[index] = pokedex.get(index).getName();
+		}
+	 return names;
+	}
+	
+	public void updateSelected(int selection, int health, int attack, boolean evolve, double modify, String name)
+	{
+		Pokemon selected = pokedex.get(selection);
+		
+		selected.setAttackPoints(attack);
+		selected.setCanEvolve(evolve);
+		selected.setEnchancementModifier(modify);
+		selected.setName(name);
+		selected.setHealthPoints(health);
 	}
 }

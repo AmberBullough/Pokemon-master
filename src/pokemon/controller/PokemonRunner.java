@@ -6,6 +6,7 @@ public class PokemonRunner
 {
 	 public static void main(String []args)
 	 {
-		 PokemonController chatbot = new PokemonController();
+		 PokemonController pokemon = new PokemonController();
 		 pokemon.start();
+}
 }
