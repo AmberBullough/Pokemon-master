@@ -22,7 +22,7 @@ public abstract class Pokemon
 	{
 		
 		String [] types = null;
-		ArrayList<String> parentType  new ArrayList<String>();
+		ArrayList<String> parentType = new ArrayList<String>();
 		Class<?> currentClass = this.getClass();
 		
 		while(currentClass.getSuperclass() != null)

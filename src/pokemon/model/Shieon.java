@@ -64,7 +64,7 @@ public class Shieon extends Pokemon implements Electric, Fairy
 		// TODO Auto-generated method stub
 		
 	}
-	private void setCanEvolve(boolean b) {
+	public void setCanEvolve(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}

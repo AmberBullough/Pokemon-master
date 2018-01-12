@@ -32,7 +32,7 @@ public class Eelithe extends Pokemon implements Normal, Fire
 		// TODO Auto-generated method stub
 		
 	}
-	private void setCanEvolve(boolean b) {
+	public void setCanEvolve(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}

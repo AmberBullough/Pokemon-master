@@ -5,9 +5,8 @@ import javax.swing.JFrame;
 import pokemon.controller.PokemonController;
 import pokemon.view.PokemonPanel;
 
-public class PokemonFrame 
-{
-	public class PokemonFrame extends JFrame
+public class PokemonFrame extends JFrame
+
 	{
 		private PokemonController baseController;
 		private PokemonPanel firstPanel;
@@ -17,7 +16,7 @@ public class PokemonFrame
 		{
 			super();
 			this.setBaseController(baseController);
-			firstPanel = new ChatPanel(baseController);
+			firstPanel = new PokemonPanel(baseController);
 			
 			setupFrame();
 		}
