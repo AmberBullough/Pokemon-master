@@ -7,7 +7,7 @@ public abstract class Pokemon
 
 	
 	private int healthPoints;
-	private int attackPonts;
+	private int attackPoints;
 	private double enchancementModifier;
 	private int number;
 	private String name;
@@ -27,7 +27,7 @@ public abstract class Pokemon
 		
 		while(currentClass.getSuperclass() != null)
 		{
-			Class<?> [] pokemonTypes = currentClass().getInterfaces();
+			Class<?> [] pokemonTypes = currentClass.getInterfaces();
 			types = new String[pokemonTypes.length];
 			
 			for(int index = 0; index < types.length; index ++)

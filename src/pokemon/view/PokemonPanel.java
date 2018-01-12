@@ -51,11 +51,8 @@ public class PokemonPanel extends JPanel
 	private JTextField txtHealth;
 	private JTextField txtAttack;
 	
-	setupComboBox();
-	//setupTypePanels();
-	//setupPanel();
-	//setupLayout();
-	//setupListeners();
+	
+	
 	
 	private void updatePokedexInfo(int index)
 	{
@@ -66,7 +63,7 @@ public class PokemonPanel extends JPanel
 		healthField.setText(appController.getPokedex().get(index).getHealthPoints() +"");
 		modifierField.setText(appController.getPokedex().get(index).getEnchancementModifier() + "");
 		
-		descriptionArea.setText(appController.getPokedex().get(index).getPokemonTypes());
+		descriptionArea.setText(appController.getPokedex().get(index).toString());
 		typeArea.setText("");
 		
 		for (String current : appController.getPokedex().get(index).getPokemonTypes())
@@ -78,7 +75,7 @@ public class PokemonPanel extends JPanel
 	
 	private void setupComboBox()
 	{
-		DefaultComboBoxModel pokemonModel = new DefautComboBoxModel(appController.convertPokedex());
+		DefaultComboBoxModel pokemonModel = new DefaultComboBoxModel(appController.convertPokedex());
 		pokedexDropdown.setModel(pokemonModel);
 	}
 	
@@ -378,6 +375,8 @@ public class PokemonPanel extends JPanel
 		secondType = new JPanel();
 		thirdType = new JPanel();
 		fourthType = new JPanel();
+		
+		setupComboBox();
 	
 	}
 }
