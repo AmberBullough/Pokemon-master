@@ -51,7 +51,7 @@ public class Raivee extends Pokemon implements Electric, Normal
 		this.setEnchanceModifier(.89);
 		this.setHealthPoints(123);
 }
-	private void setHealthPoints(int i) {
+	private void getHealthPoints(int i) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -59,7 +59,7 @@ public class Raivee extends Pokemon implements Electric, Normal
 		// TODO Auto-generated method stub
 		
 	}
-	protected void setAttackPoints(int i) {
+	protected void getAttackPoints(int i) {
 		// TODO Auto-generated method stub
 		
 	}

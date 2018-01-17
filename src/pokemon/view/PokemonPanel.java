@@ -56,12 +56,12 @@ public class PokemonPanel extends JPanel
 	
 	public boolean isValidInteget(String input)
 	{
-		return false;
+		return true;
 	}
 	
 	public boolean isValidDouble(String input)
 	{
-		return false;
+		return true;
 	}
 	
 	
@@ -422,10 +422,16 @@ public class PokemonPanel extends JPanel
 			public void actionPerformerd(ActionEvent selection)
 			{
 				int selectedPokemonIndex = pokedexDropdown.getSelectedIndex();
-				updatePokedex.info(selectedPokemonIndex);
+				updatePokedexInfo(selectedPokemonIndex);
 				updateImage();
 				updateTypePanels();
 				repaint();
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 			
@@ -436,21 +442,21 @@ public class PokemonPanel extends JPanel
 
 				if(appController.isValidInteget(attackField.getText()) && appController.isValidInteget(healthField.getText()) && appController.isValidDouble(modifierField.getText()))
 				{
-					int selected  pokedexDropdown.getSelectedIndex();
+					int selected = pokedexDropdown.getSelectedIndex();
 					int health = Integer.parseInt(healthField.getText());
 					int attack = Integer.parseInt(attackField.getText());
-					double modifier = Double.parseDouble(modifierField.getText()));
+					double modifier = Double.parseDouble(modifierField.getText());
 					String name = nameField.getText();
 					boolean evolvable = evolvableBox.isSelected();
 			
-					appC	ontroller.updateSelected(selected,  health,  attack,  evolvable, modifier, name);
+					appController.updateSelected(selected,  health,  attack,  evolvable, modifier, name);
 					}
 				}
 					});
 				}
+			
 			}
-			}
-		}
+		
 	
 
 

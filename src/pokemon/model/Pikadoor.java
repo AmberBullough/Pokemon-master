@@ -44,7 +44,7 @@ public class Pikadoor extends Pokemon implements Grass, Electric
 		this.setEnchanceModifier(.89);
 		this.setHealthPoints(123);
 }
-	private void setHealthPoints(int i) {
+	private void getHealthPoints(int i) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -52,7 +52,7 @@ public class Pikadoor extends Pokemon implements Grass, Electric
 		// TODO Auto-generated method stub
 		
 	}
-	private void setAttackPoints(int i) {
+	private void getAttackPoints(int i) {
 		// TODO Auto-generated method stub
 		
 	}

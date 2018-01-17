@@ -93,15 +93,16 @@ public abstract class Pokemon
 		// TODO Auto-generated method stub
 		
 	}
-	public void getEnchancementModifier(double modify) {
+
+	public void setEnchancementModifier(double modify) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void getHealthPoints(int health) {
+	public void setAttackPoints(int attack) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void getAttackPoints(int attack) {
+	public void setHealthPoints(int health) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -6,6 +6,7 @@ import pokemon.view.PokemonFrame;
 import java.util.List;
  import java.util.ArrayList;
  import pokemon.model.*;
+ import pokemon.controller.FileController;
  
 public class PokemonController 
 {
@@ -90,10 +91,12 @@ public class PokemonController
 	{
 		Pokemon selected = pokedex.get(selection);
 		
-		selected.getAttackPoints(attack);
-		selected.setCanEvolve(evolve);
-		selected.getEnchancementModifier(modify);
+		selected.setAttackPoints(attack);
+		selected.isCanEvolve(evolve);
+		selected.setEnchancementModifier(modify);
 		selected.setName(name);
-		selected.getHealthPoints(health);
+		selected.setHealthPoints(health);
+		
+		FileController.savePokemonToFile((ArrayList<Pokemon>) pokedex);
 	}
 }
