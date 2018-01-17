@@ -1,6 +1,8 @@
 package pokemon.view;
 
 import pokemon.controller.PokemonController;
+import pokemon.model.Pokemon;
+
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.SpringLayout;
@@ -52,8 +54,41 @@ public class PokemonPanel extends JPanel
 	private JTextField txtAttack;
 	
 	
+	public boolean isValidInteget(String input)
+	{
+		return false;
+	}
+	
+	public boolean isValidDouble(String input)
+	{
+		return false;
+	}
 	
 	
+	public String [] convertPokedex()
+	{
+		String [] names = new String [pokedex.size()];
+		
+		for (int index = 0; index < pokedex.side(); index++)
+		{
+			names[index] = pokedex.get(index).getName();
+		}
+		return names;
+	}
+	
+	public void updateSelected(int selection, int health, int attack, boolean evolve, double modify, String name)
+	{
+		Pokemon selected = pokedex.getSelection);
+		
+		selected.setAttackPoints(attack);
+		selected.setCanEvolve(evolve);
+		selected.setEnchancementModifier(modify);
+		selected.setName(name);;
+		selected.setHealthPoints(health);
+	}
+		
+			
+			
 	private void updatePokedexInfo(int index)
 	{
 		nameField.setText(appController.getPokedex().get(index).getName());
@@ -319,33 +354,33 @@ public class PokemonPanel extends JPanel
 		add(txtAttack);
 		txtAttack.setColumns(10);
 		
-		JPanel panel = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel, 6, SpringLayout.SOUTH, txtrDescription);
-		springLayout.putConstraint(SpringLayout.WEST, panel, 51, SpringLayout.EAST, lblIcon);
-		springLayout.putConstraint(SpringLayout.SOUTH, panel, -198, SpringLayout.SOUTH, comboBox);
-		springLayout.putConstraint(SpringLayout.EAST, panel, -254, SpringLayout.EAST, this);
-		add(panel);
+		JPanel firstType_1 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, firstType_1, 6, SpringLayout.SOUTH, txtrDescription);
+		springLayout.putConstraint(SpringLayout.WEST, firstType_1, 51, SpringLayout.EAST, lblIcon);
+		springLayout.putConstraint(SpringLayout.SOUTH, firstType_1, -198, SpringLayout.SOUTH, comboBox);
+		springLayout.putConstraint(SpringLayout.EAST, firstType_1, -254, SpringLayout.EAST, this);
+		add(firstType_1);
 		
-		JPanel panel_1 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 6, SpringLayout.SOUTH, txtrDescription);
-		springLayout.putConstraint(SpringLayout.WEST, panel_1, 207, SpringLayout.EAST, lblIcon);
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, -70, SpringLayout.NORTH, btnSave);
-		springLayout.putConstraint(SpringLayout.EAST, panel_1, -98, SpringLayout.EAST, this);
-		add(panel_1);
+		JPanel secondType_1 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, secondType_1, 6, SpringLayout.SOUTH, txtrDescription);
+		springLayout.putConstraint(SpringLayout.WEST, secondType_1, 207, SpringLayout.EAST, lblIcon);
+		springLayout.putConstraint(SpringLayout.SOUTH, secondType_1, -70, SpringLayout.NORTH, btnSave);
+		springLayout.putConstraint(SpringLayout.EAST, secondType_1, -98, SpringLayout.EAST, this);
+		add(secondType_1);
 		
-		JPanel panel_2 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_2, -49, SpringLayout.NORTH, btnClear);
-		springLayout.putConstraint(SpringLayout.WEST, panel_2, 0, SpringLayout.WEST, panel);
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_2, -6, SpringLayout.NORTH, btnClear);
-		springLayout.putConstraint(SpringLayout.EAST, panel_2, 0, SpringLayout.EAST, panel);
-		add(panel_2);
+		JPanel thirdType_1 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, thirdType_1, -49, SpringLayout.NORTH, btnClear);
+		springLayout.putConstraint(SpringLayout.WEST, thirdType_1, 0, SpringLayout.WEST, firstType_1);
+		springLayout.putConstraint(SpringLayout.SOUTH, thirdType_1, -6, SpringLayout.NORTH, btnClear);
+		springLayout.putConstraint(SpringLayout.EAST, thirdType_1, 0, SpringLayout.EAST, firstType_1);
+		add(thirdType_1);
 		
-		JPanel panel_3 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_3, 0, SpringLayout.NORTH, panel_2);
-		springLayout.putConstraint(SpringLayout.WEST, panel_3, 50, SpringLayout.EAST, panel_2);
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_3, -6, SpringLayout.NORTH, btnSave);
-		springLayout.putConstraint(SpringLayout.EAST, panel_3, 0, SpringLayout.EAST, panel_1);
-		add(panel_3);
+		JPanel forthType = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, forthType, 0, SpringLayout.NORTH, thirdType_1);
+		springLayout.putConstraint(SpringLayout.WEST, forthType, 50, SpringLayout.EAST, thirdType_1);
+		springLayout.putConstraint(SpringLayout.SOUTH, forthType, -6, SpringLayout.NORTH, btnSave);
+		springLayout.putConstraint(SpringLayout.EAST, forthType, -98, SpringLayout.EAST, this);
+		add(forthType);
 		
 		baseLayout = new SpringLayout();
 		
@@ -379,4 +414,44 @@ public class PokemonPanel extends JPanel
 		setupComboBox();
 	
 	}
-}
+	
+	private void setupListeners()
+	{
+		pokedexDropdown.addActionListener(new ActionListener()
+		{
+			public void actionPerformerd(ActionEvent selection)
+			{
+				int selectedPokemonIndex = pokedexDropdown.getSelectedIndex();
+				updatePokedex.info(selectedPokemonIndex);
+				updateImage();
+				updateTypePanels();
+				repaint();
+			}
+		});
+			
+			saveButton.addActionListener(new ActionListener()
+					{
+				public void actionPerformed(ActionEvent click)
+				{
+
+				if(appController.isValidInteget(attackField.getText()) && appController.isValidInteget(healthField.getText()) && appController.isValidDouble(modifierField.getText()))
+				{
+					int selected  pokedexDropdown.getSelectedIndex();
+					int health = Integer.parseInt(healthField.getText());
+					int attack = Integer.parseInt(attackField.getText());
+					double modifier = Double.parseDouble(modifierField.getText()));
+					String name = nameField.getText();
+					boolean evolvable = evolvableBox.isSelected();
+			
+					appC	ontroller.updateSelected(selected,  health,  attack,  evolvable, modifier, name);
+					}
+				}
+					});
+				}
+			}
+			}
+		}
+	
+
+
+
