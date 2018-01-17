@@ -21,10 +21,10 @@ public class FileController
 		for(int index = 0; index < pokedex.size(); index++)
 		{
 			String name = pokedex.get(index).getName();
-			int number = pokedex.get(index)gettNumber();
+			int number = pokedex.get(index).getNumber();
 			int attack = pokedex.get(index).getAttackPoints();
 			int health = pokedex.get(index).getHealthPoints();
-			boolean evolve = pokedex.get(index).isCanEvolve();
+			boolean evolve = pokedex.get(index).canEvolve();
 			double modify = pokedex.get(index).getEnchancementModifier();
 			
 			String row = name + "," + number + "," + health + "," + attack + "," + modify+ "," + evolve;
@@ -38,4 +38,28 @@ public class FileController
 	{
 		System.out.println("There was an error:" + error.getMessage());
 	}
-}
+	}
+	
+	public static String readPokemonFromFIle()
+	{
+		String contents = "";
+		String path = "saved Pdex.txt";
+		try 
+		
+		{
+			Scanner fileScanner = new Scanner(new File(path));
+			while(fileScanner.hasNextLine())
+			{
+				String row = fileScanner.nextLine();
+				contents = row + "\n";
+			}
+			fileScanner.close();
+		}
+		catch (FileNotFoundException error) 
+		{
+			System.out.println("there was an error:" + error.getMessage());
+		}
+		
+		return contents;
+		}
+	}

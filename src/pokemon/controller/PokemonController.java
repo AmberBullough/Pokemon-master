@@ -92,7 +92,7 @@ public class PokemonController
 		Pokemon selected = pokedex.get(selection);
 		
 		selected.setAttackPoints(attack);
-		selected.isCanEvolve(evolve);
+		selected.setCanEvolve(evolve);
 		selected.setEnchancementModifier(modify);
 		selected.setName(name);
 		selected.setHealthPoints(health);
